@@ -1,0 +1,322 @@
+1.
+import java.util.*;
+public class CollectionPrb1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		TreeMap<Long,Contact> tree=new TreeMap<>();
+		tree.put(1L,(new Contact("----NAME----","-------E-MAIL Address-----","----GENDER----")));
+		tree.put(9140551008L,(new Contact("Bhartesh","  siddhantsurwashi@gmail.com","   Male")));
+		tree.put(6519091008L,(new Contact("Siddu","   bharteshsurwashi@gmail.com","   Male")));
+		tree.put(9623871008L,(new Contact("Bhartesh","  siddhantsurwashi@gmail.com","   Male")));
+		tree.put(7640551008L,(new Contact("Bhartesh","  siddhantsurwashi@gmail.com","   Male")));
+		tree.put(5340551008L,(new Contact("Bhartesh","  siddhantsurwashi@gmail.com","   Male")));
+		System.out.println(tree);
+		Set<Map.Entry<Long,Contact>> entrySet=tree.entrySet();
+		System.out.println(entrySet);
+		//Map.Entry<Long, Contact>[] entryArray=entrySet.toArray(new Map.Entry[entrySet.size()]);
+		System.out.println("Key of Tree Map are :\n");
+		for(Map.Entry<Long, Contact> entryArray:entrySet) {
+			System.out.println(entryArray.getKey());
+		}
+		System.out.println("Values of Tree Map are :\n");
+		for(Map.Entry<Long, Contact> entryArray:entrySet) {
+			System.out.println(entryArray.getValue());
+		}
+
+	}
+
+}
+
+2.
+import java.util.*;
+public class CollectionPrb2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeSet<Object> tree=new TreeSet<>();
+		tree.add("Abc");
+		//tree.add(new employee("Bhartesh"));
+		tree.add("Abc");
+		tree.add("Ac");
+		tree.add("Avbc");
+		tree.add("Abgc");
+		tree.add("Abxc");
+		tree.add("Absc");
+		tree.add("Abkc");
+		tree.add("Abcc");
+		tree.add("Abzc");
+		
+		System.out.println(tree);
+	}
+
+}
+
+3.
+
+
+import java.util.*;
+public class CollectionPrb3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		for(int i=1;i<=4;i++) {
+		System.out.println("\n\n-----In what sorted order details do you want----");
+		System.out.println("1:ID\n2:Name\n3:Department\n4:Salary\n5:exit");
+		System.out.println("\nEnter your choice: ");
+		int n=sc.nextInt();
+		
+		switch(n) {
+		case 1:
+			TreeSet<employee> tree=new TreeSet<>(new MyIdComp());
+			tree.add(new employee(23,"Bhartesh","CSE",40000));
+			tree.add(new employee(12,"Siddu","ME",60000));
+			tree.add(new employee(24,"Abhsy","ECE",30000));
+			tree.add(new employee(21,"Harshita","CE",40000));
+			tree.add(new employee(19,"Aditya","CSE",40000));
+			tree.add(new employee(9,"Titi","CSE",50000));
+			tree.add(new employee(34,"Suyash","ECE",70000));
+			tree.add(new employee(13,"Shreyaunsh","ME",50000));
+			//System.out.print(tree);
+			for(employee e:tree) {
+				System.out.println(e);
+			}
+			break;
+		case 2:
+			TreeSet<employee> tree1=new TreeSet<>(new MyNameComp());
+			tree1.add(new employee(23,"Bhartesh","CSE",40000));
+			tree1.add(new employee(12,"Siddu","ME",60000));
+			tree1.add(new employee(24,"Abhsy","ECE",30000));
+			tree1.add(new employee(21,"Harshita","CE",40000));
+			tree1.add(new employee(19,"Aditya","CSE",40000));
+			tree1.add(new employee(9,"Titi","CSE",50000));
+			tree1.add(new employee(34,"Suyash","ECE",70000));
+			tree1.add(new employee(13,"Shreyaunsh","ME",50000));
+			//System.out.print(tree);
+			for(employee e:tree1) {
+				System.out.println(e);
+			}
+			break;
+		case 3:
+			TreeSet<employee> tree2=new TreeSet<>(new MyDepComp());
+			tree2.add(new employee(23,"Bhartesh","CSE",40000));
+			tree2.add(new employee(12,"Siddu","ME",60000));
+			tree2.add(new employee(24,"Abhsy","ECE",30000));
+			tree2.add(new employee(21,"Harshita","CE",40000));
+			tree2.add(new employee(19,"Aditya","CSE",40000));
+			tree2.add(new employee(9,"Titi","CSE",50000));
+			tree2.add(new employee(34,"Suyash","ECE",70000));
+			tree2.add(new employee(13,"Shreyaunsh","ME",50000));
+			//System.out.print(tree);
+			for(employee e:tree2) {
+				System.out.println(e);
+			}
+		case 4:
+			TreeSet<employee> tree3=new TreeSet<>(new MySalaryComp());
+			tree3.add(new employee(23,"Bhartesh","CSE",40000));
+			tree3.add(new employee(12,"Siddu","ME",60000));
+			tree3.add(new employee(24,"Abhsy","ECE",30000));
+			tree3.add(new employee(21,"Harshita","CE",40000));
+			tree3.add(new employee(19,"Aditya","CSE",40000));
+			tree3.add(new employee(9,"Titi","CSE",50000));
+			tree3.add(new employee(34,"Suyash","ECE",70000));
+			tree3.add(new employee(13,"Shreyaunsh","ME",50000));
+			//System.out.print(tree);
+			for(employee e:tree3) {
+				System.out.println(e);
+			}
+		default:
+			System.out.println("Wrong Input  !");
+		}
+		}
+	
+	}
+
+}
+
+
+4.
+
+import java.util.*;
+public class CollectionPrb4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList<String> lis=new LinkedList<String>();
+		lis.add("23-10-2000");
+	
+	}
+
+}
+
+
+
+CONTACT.JAVA
+
+
+
+public class Contact {
+	
+	private String name;
+	private String Email;
+	private String Gender;
+	public Contact(String name, String email, String gender) {
+		super();
+		this.name = name;
+		Email = email;
+		Gender = gender;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getEmail() {
+		return Email;
+	}
+	public String getGender() {
+		return Gender;
+	}
+	public String toString() {
+		return ""+this.name+" "+this.Email+" "+this.Gender;
+	}
+}
+
+COLLECTION.JAVA
+
+
+
+import java.util.*;
+class animal{
+	void anmm()
+	{
+		System.out.println("This is Animal");
+	}
+}
+class dogs extends animal{
+	void bark() {
+		System.out.println("Baauu Baauu");
+	}
+}
+class ang extends dogs{
+	void barks() {
+		System.out.println("Abc");
+	}
+}
+public class collectionPrc {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		dogs o=new dogs();
+		o.anmm();
+		o.bark();
+		
+	}
+	
+
+}
+
+
+
+EMPLOYEE.JAVA
+
+
+import java.util.*;
+public class employee {
+	private int id;
+	private String name;
+	private String department;
+	private int salary;
+
+	public employee(int id,String name,String department,int salary) {
+		super();
+		this.id=id;
+		this.name = name;
+		this.department=department;
+		this.salary=salary;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	public String toString() {
+		return "ID : "+id+" --------Name : "+name+" -------Department : "+department+" ---------Salary : "+salary;
+	}
+}
+class MyNameComp implements Comparator<employee>{
+
+	@Override
+	public int compare(employee o1, employee o2) {
+		// TODO Auto-generated method stub
+		
+		return o1.getName().compareTo(o2.getName());
+	}
+	
+}
+class MyIdComp implements Comparator<employee>{
+
+	@Override
+	public int compare(employee o1, employee o2) {
+		// TODO Auto-generated method stub
+		if(o1.getId()>o2.getId()) {
+			return 1;
+		}
+		else {
+			return -1;
+		}
+	}
+	
+}
+class MyDepComp implements Comparator<employee>{
+
+	@Override
+	public int compare(employee o1, employee o2) {
+		// TODO Auto-generated method stub
+		return o1.getDepartment().compareTo(o2.getDepartment());
+	}
+	
+}
+class MySalaryComp implements Comparator<employee>{
+
+	@Override
+	public int compare(employee o1, employee o2) {
+		// TODO Auto-generated method stub
+
+		if(o1.getSalary()>o2.getSalary()) {
+			return 1;
+		}
+		else {
+			return -1;
+		}
+	}
+	
+}
